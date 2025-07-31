@@ -3,6 +3,7 @@
 # Specific Emission Mode Input Data in LOD 2
 
 This repository provides a modular workflow to generate the Specific Emission Mode Input Data in LOD 2 for the [PALM modeling system](https://gitlab.palm-model.org/releases/palm_model_system/-/releases) using downscaled GRETA emission inventories. The scripts process spatiotemporal emission data into CF-compliant NetCDF files compatible with PALM's LOD2 input for traffic emissions will be called [model]_emis_traffic, while that for the all-purpose generic mode will be called [model]_emis_generic.
+
 ---
 
 # Attributes and Dimensions
