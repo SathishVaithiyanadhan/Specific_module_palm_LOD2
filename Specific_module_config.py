@@ -4,22 +4,22 @@ import warnings
 import os
 
 # Suppress warnings
-warnings.filterwarnings("ignore")
-warnings.simplefilter("ignore")
+#warnings.filterwarnings("ignore")
+#warnings.simplefilter("ignore")
 
-print('Reading PALM chemistry configuration')
+print('Reading PALM Emission input configuration')
 # Projection configurations
-config_proj = "EPSG:25832"  # UTM Zone 32N
-default_proj = "EPSG:4326"  # WGS84
+#config_proj = "EPSG:25832"  # UTM Zone 32N
+#default_proj = "EPSG:4326"  # WGS84
 
 # Coordinate transformers
-transformer_to_utm = Transformer.from_crs(default_proj, config_proj, always_xy=True)
-transformer_to_wgs = Transformer.from_crs(config_proj, default_proj, always_xy=True)
+#transformer_to_utm = Transformer.from_crs(default_proj, config_proj, always_xy=True)
+#transformer_to_wgs = Transformer.from_crs(config_proj, default_proj, always_xy=True)
 
 # Path configurations
 emis_geotiff_pth = '/home/vaithisa/Downscale_Emissions/Downscale_Winter/'
 static_pth = '/home/vaithisa/GEO4PALM-main/JOBS/Augsburg_3/OUTPUT/'
-static = 'Augsburg_H'
+static = 'Augsburg_H_LAD'
 
 # Active emission categories (edit these to select sectors)
 active_categories = [
@@ -41,7 +41,8 @@ cat_name_str = tuple(active_categories)
 cat_name = np.array(cat_name_str, dtype='S64')
 
 # Chemical species configuration (customize as needed)
-spec_name_str = ('no2', 'pm10', 'co')  # Example subset; can be modified to any subset of species
+spec_name_str = ('pm10', 'no', 'no2', 'o3' )  # Example subset; can be modified to any subset of species
+#spec_name_str = ('n2o', 'nox', 'nmvoc', 'so2', 'co', 'pm10', 'pm2_5', 'nh3', 'pb', 'cd', 'hg', 'as', 'ni', 'bc', 'co2', 'ch4', 'no', 'no2', 'ec', 'oc', 'na', 'so4', 'othmin', 'o3')
 spec_name = np.array(spec_name_str, dtype='S64')
 
 # Molar masses (g/mol) for unit conversion; None for particulate matter
