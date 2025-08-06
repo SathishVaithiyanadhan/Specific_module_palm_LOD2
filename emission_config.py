@@ -2,7 +2,7 @@ import numpy as np
 
 # Path configurations
 geotiff_dir = "/home/vaithisa/Downscale_Emissions/Downscale_Winter/"
-static_path = "/home/vaithisa/GEO4PALM-main/JOBS/Augsburg_3/OUTPUT/Augsburg_H_LAD_static"
+static_path = "/home/vaithisa/GEO4PALM-main/JOBS/Augsburg_3/OUTPUT/O3_small_static"
 output_dir = "/home/vaithisa/GEO4PALM-main/JOBS/Augsburg_3/OUTPUT/"
 
 # Emission categories and species
@@ -22,8 +22,8 @@ active_categories = [
    # 'L_AgriOther',
     #'SumAllSectors'
 ]
-#spec_name_str = ('pm10', 'no', 'no2', 'o3')
-spec_name_str = ('n2o', 'nox', 'nmvoc', 'so2', 'co', 'pm10', 'pm2_5', 'nh3', 'pb', 'cd', 'hg', 'as', 'ni', 'bc', 'co2', 'ch4', 'no', 'no2', 'ec', 'oc', 'na', 'so4', 'othmin', 'o3')
+spec_name_str = ('pm10', 'no', 'no2', 'o3')
+#spec_name_str = ('n2o', 'nox', 'nmvoc', 'so2', 'co', 'pm10', 'pm2_5', 'nh3', 'pb', 'cd', 'hg', 'as', 'ni', 'bc', 'co2', 'ch4', 'no', 'no2', 'ec', 'oc', 'na', 'so4', 'othmin', 'o3')
 spec_name = np.array(spec_name_str, dtype='S64')
 
 # Molar masses (g/mol) for unit conversion; None for particulate matter
@@ -57,7 +57,6 @@ molar_mass = {
 # Model parameters
 layer_height = 3  # Thickness of each vertical grid cell in (m) as specified in the PALM configuration file
 non_zero_threshold = 1e-20
-model_name = "Augs_H_LAD"  #PALM config name
+model_name = "O3_small_3"  #PALM config name
 emission_mode = "traffic"
 field_length = 64
-#netcdf_output = f"{output_dir}{model_name}_emis_{emission_mode}"
