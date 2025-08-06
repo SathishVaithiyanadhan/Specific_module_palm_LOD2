@@ -1,48 +1,29 @@
 import numpy as np
-from pyproj import Proj, Transformer
-import warnings
-import os
-
-# Suppress warnings
-#warnings.filterwarnings("ignore")
-#warnings.simplefilter("ignore")
-
-print('Reading PALM Emission input configuration')
-# Projection configurations
-#config_proj = "EPSG:25832"  # UTM Zone 32N
-#default_proj = "EPSG:4326"  # WGS84
-
-# Coordinate transformers
-#transformer_to_utm = Transformer.from_crs(default_proj, config_proj, always_xy=True)
-#transformer_to_wgs = Transformer.from_crs(config_proj, default_proj, always_xy=True)
 
 # Path configurations
-emis_geotiff_pth = '/home/vaithisa/Downscale_Emissions/Downscale_Winter/'
-static_pth = '/home/vaithisa/GEO4PALM-main/JOBS/Augsburg_3/OUTPUT/'
-static = 'Augsburg_H_LAD'
+geotiff_dir = "/home/vaithisa/Downscale_Emissions/Downscale_Winter/"
+static_path = "/home/vaithisa/GEO4PALM-main/JOBS/Augsburg_3/OUTPUT/Augsburg_H_LAD_static"
+output_dir = "/home/vaithisa/GEO4PALM-main/JOBS/Augsburg_3/OUTPUT/"
 
-# Active emission categories (edit these to select sectors)
+# Emission categories and species
+selected_band_prefix = "SumAllSectors"
 active_categories = [
-    #'A_PublicPower', 
-    #'B_Industry', 
-    #'C_OtherStationaryComb', 
+   # 'A_PublicPower', 
+   # 'B_Industry', 
+   # 'C_OtherStationaryComb', 
     #'D_Fugitives',
     #'E_Solvents', 
     'F_RoadTransport', 
     #'G_Shipping', 
     #'H_Aviation',
-    #'I_OffRoad', 
+   # 'I_OffRoad', 
     #'J_Waste', 
-    #'K_AgriLivestock', 
-    #'L_AgriOther',
+   # 'K_AgriLivestock', 
+   # 'L_AgriOther',
     #'SumAllSectors'
 ]
-cat_name_str = tuple(active_categories)
-cat_name = np.array(cat_name_str, dtype='S64')
-
-# Chemical species configuration (customize as needed)
-spec_name_str = ('pm10', 'no', 'no2', 'o3' )  # Example subset; can be modified to any subset of species
-#spec_name_str = ('n2o', 'nox', 'nmvoc', 'so2', 'co', 'pm10', 'pm2_5', 'nh3', 'pb', 'cd', 'hg', 'as', 'ni', 'bc', 'co2', 'ch4', 'no', 'no2', 'ec', 'oc', 'na', 'so4', 'othmin', 'o3')
+#spec_name_str = ('pm10', 'no', 'no2', 'o3')
+spec_name_str = ('n2o', 'nox', 'nmvoc', 'so2', 'co', 'pm10', 'pm2_5', 'nh3', 'pb', 'cd', 'hg', 'as', 'ni', 'bc', 'co2', 'ch4', 'no', 'no2', 'ec', 'oc', 'na', 'so4', 'othmin', 'o3')
 spec_name = np.array(spec_name_str, dtype='S64')
 
 # Molar masses (g/mol) for unit conversion; None for particulate matter
@@ -72,3 +53,11 @@ molar_mass = {
     'othmin': None,    # Other minerals, treated as particulate matter
     'o3': 48.00        # O₃ (gas-phase)
 }
+
+# Model parameters
+layer_height = 3  # Thickness of each vertical grid cell in (m) as specified in the PALM configuration file
+non_zero_threshold = 1e-20
+model_name = "Augs_H_LAD"  #PALM config name
+emission_mode = "traffic"
+field_length = 64
+#netcdf_output = f"{output_dir}{model_name}_emis_{emission_mode}"
