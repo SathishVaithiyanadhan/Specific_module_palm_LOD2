@@ -10,7 +10,7 @@ from rasterio.warp import reproject, Resampling
 from rasterio.transform import from_bounds
 import os
 import netCDF4 as nc
-from emission_config import geotiff_dir, static_path, output_dir, selected_band_prefix, active_categories, spec_name_str, molar_mass, layer_height, non_zero_threshold, model_name, emission_mode, field_length
+from Specific_module_config import geotiff_dir, static_path, output_dir, selected_band_prefix, active_categories, spec_name_str, molar_mass, layer_height, non_zero_threshold, model_name, emission_mode, field_length
 
 # Define species name mapping
 species_mapping = {

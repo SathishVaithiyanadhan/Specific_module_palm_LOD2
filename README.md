@@ -43,17 +43,25 @@ The following data is required to create the chemistry driver for the PALM simul
 1. Configure Paths/Parameters
    - Edit Specific_module_config.py:
 
-       * Set emis_geotiff_pth and static_pth 
+       * Set **geotiff_dir**, **static_pth** and **output_dir**
 
-       * Select the preferred active categories and species
+       * Select the preferred **active categories** and **species**
+
+       * Keep the **selected_band_prefix = "SumAllSectors"** to process all the active categories.
+
+       * Set the **layer_height** from your PALM configuration.
+
+       * Set the **non_zero_threshold** value to find the emission source locations.
+
+       * Set the **model_name** (name of you PALM job) and **emission_mode** (Specific mode like traffic, generic, etc.,) to name the output file accordingly.
 
 2. Run Main Script
 
-    * **python Specific_module_main.py** 
+    * **python Specific_module_tool.py** 
 
 3. Output
 
-    * NetCDF file generated at: **{static_pth}/{static}_emis_traffic**
+    * NetCDF file generated at: **output_dir**
 
 ---
 
