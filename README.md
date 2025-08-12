@@ -18,7 +18,7 @@ The driver integrates gridded emission data (e.g., from the GRETA inventory) wit
 - **AOI extraction** and grids verification from the input static data (the static driver for the simulation is read, necessary data is extracted.)
 - **Multiple sector handling**  from the GRETA emission inventory.
 - **Multiple species handling**  from the GRETA emission inventory.
-- **Hourly emissions** as the input (LOD2)
+- **Hourly emissions** as the input (LOD2).
 - **Dynamic unit conversion** includes all volumetric emission sources are expressed in mol/(m3s) for gas-phase species and kg/(m3s) for particulate matter (PM).
 - Automatic **volumetric emission sources** for each species in the config, defining all source cell locations (i,j,k) defined in the variables vsrc_i, vsrc_j, and vsrc_k. 
 - Properly handling the NAN values.
