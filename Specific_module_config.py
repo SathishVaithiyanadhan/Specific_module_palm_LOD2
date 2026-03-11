@@ -28,30 +28,30 @@ spec_name = np.array(spec_name_str, dtype='S64')
 
 # Molar masses (g/mol) for unit conversion; None for particulate matter
 molar_mass = {
-    'n2o': 44.01,      # N₂O (gas-phase)
-    'nox': 46.01,      # Approximated as NO₂ (gas-phase)
-    'nmvoc': 44.10,    # Approximated as propane, C₃H₈ (gas-phase)
-    'so2': 64.06,      # SO₂ (gas-phase)
-    'co': 28.01,       # CO (gas-phase)
-    'pm10': None,      # Particulate matter
-    'pm2_5': None,     # Particulate matter
-    'nh3': 17.03,      # NH₃ (gas-phase)
-    'pb': None,        # Lead, treated as particulate matter
-    'cd': None,        # Cadmium, treated as particulate matter
-    'hg': None,        # Mercury, treated as particulate matter
-    'as': None,        # Arsenic, treated as particulate matter
-    'ni': None,        # Nickel, treated as particulate matter
-    'bc': None,        # Black carbon, treated as particulate matter
-    'co2': 44.01,      # CO₂ (gas-phase)
-    'ch4': 16.04,      # CH₄ (gas-phase)
-    'no': 30.01,       # NO (gas-phase)
-    'no2': 46.01,      # NO₂ (gas-phase)
-    'ec': None,        # Elemental carbon, treated as particulate matter
-    'oc': None,        # Organic carbon, treated as particulate matter
-    'na': None,        # Sodium, treated as particulate matter
-    'so4': None,       # Sulfate, treated as particulate matter
-    'othmin': None,    # Other minerals, treated as particulate matter
-    'o3': 48.00        # O₃ (gas-phase)
+    'n2o': 44.01,      
+    'nox': 46.01,      
+    'nmvoc': 44.10,    # Approximated as propane C3H8
+    'so2': 64.06,      
+    'co': 28.01,       
+    'pm10': None,      
+    'pm2_5': None,     
+    'nh3': 17.03,     
+    'pb': None,        
+    'cd': None,        
+    'hg': None,        
+    'as': None,        
+    'ni': None,        
+    'bc': None,        
+    'co2': 44.01,      
+    'ch4': 16.04,      
+    'no': 30.01,      
+    'no2': 46.01,      
+    'ec': None,        
+    'oc': None,       
+    'na': None,       
+    'so4': None,       
+    'othmin': None,    
+    'o3': 48.00       
 }
 
 # Model parameters
